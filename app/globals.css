@@ -1,0 +1,631 @@
+@import "tailwindcss";
+
+/* =========================
+   BASE
+========================= */
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --navy: #07111f;
+  --blue: #1677ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #1677ff;
+  color: #ffffff;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1677ff;
+  border-radius: 20px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+  height: 72px;
+}
+
+header nav {
+  height: 72px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+#home {
+  min-height: 620px;
+  padding-top: 72px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/*
+  Main hero grid
+*/
+
+#home > .relative.mx-auto.grid {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   HERO LEFT CONTENT
+========================= */
+
+#home h1 {
+  font-size: clamp(52px, 5.2vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  margin: 0;
+}
+
+#home h2 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin-top: 18px;
+}
+
+#home p {
+  line-height: 1.6;
+}
+
+/* =========================
+   PROFILE CONTAINER
+========================= */
+
+/*
+  IMPORTANT:
+  Give the right column enough width
+  for image + statistics.
+*/
+
+#home > .relative.mx-auto.grid > div:last-child {
+  position: relative;
+  width: 520px;
+  min-width: 520px;
+  height: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+#home > .relative.mx-auto.grid > div:last-child
+  > .relative.overflow-hidden {
+  position: relative;
+
+  width: 350px;
+  min-width: 350px;
+  height: 430px;
+
+  border-radius: 26px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25),
+    0 0 60px rgba(37, 99, 235, 0.08);
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+#home > .relative.mx-auto.grid > div:last-child
+  > .relative.overflow-hidden
+  img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+
+  display: block;
+}
+
+/* =========================
+   STATS
+========================= */
+
+/*
+  Put statistics OUTSIDE image.
+*/
+
+#home > .relative.mx-auto.grid > div:last-child
+  > .absolute.-right-5 {
+  position: absolute;
+
+  top: 42px;
+  right: 0;
+
+  width: 135px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 28px;
+
+  border-left: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+/* Each statistic */
+
+#home > .relative.mx-auto.grid > div:last-child
+  > .absolute.-right-5
+  > div {
+  margin-bottom: 36px;
+}
+
+#home > .relative.mx-auto.grid > div:last-child
+  > .absolute.-right-5
+  > div:last-child {
+  margin-bottom: 0;
+}
+
+/* Number */
+
+#home > .relative.mx-auto.grid > div:last-child
+  > .absolute.-right-5
+  p:first-child {
+  margin: 0;
+
+  font-size: 32px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #1677ff;
+}
+
+/* Label */
+
+#home > .relative.mx-auto.grid > div:last-child
+  > .absolute.-right-5
+  p:last-child {
+  margin: 8px 0 0;
+
+  max-width: 105px;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #94a3b8;
+}
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+#home a {
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+#home a:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+#about {
+  background: #ffffff;
+}
+
+#about h2,
+#skills h2,
+#projects h2,
+#experience h2 {
+  letter-spacing: -0.035em;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+#skills {
+  background: #f8fafc;
+}
+
+#skills .grid > div {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+#skills .grid > div:hover {
+  transform: translateY(-5px);
+  border-color: #93c5fd;
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+#projects {
+  background: #ffffff;
+}
+
+#projects article {
+  overflow: hidden;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#projects article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.12);
+}
+
+#projects article > div:first-child {
+  position: relative;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #f1f5f9;
+}
+
+#projects article > div:first-child img {
+  transition: transform 0.5s ease;
+}
+
+#projects article:hover
+  > div:first-child
+  img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+#experience {
+  background: #f8fafc;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact {
+  position: relative;
+  overflow: hidden;
+}
+
+#contact::before {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  right: -150px;
+  top: -250px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-right {
+  animation: fadeRight 0.8s ease-out both;
+}
+
+.animate-fade-left {
+  animation: fadeLeft 0.8s ease-out both;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1200px) {
+  #home > .relative.mx-auto.grid > div:last-child {
+    width: 470px;
+    min-width: 470px;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .relative.overflow-hidden {
+    width: 320px;
+    min-width: 320px;
+    height: 410px;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .absolute.-right-5 {
+    width: 120px;
+  }
+}
+
+/* =========================
+   MOBILE / TABLET
+========================= */
+
+@media (max-width: 1023px) {
+  #home {
+    min-height: auto;
+    padding-top: 110px;
+    padding-bottom: 80px;
+  }
+
+  #home > .relative.mx-auto.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child {
+    width: 100%;
+    min-width: 0;
+
+    height: auto;
+
+    justify-content: center;
+
+    margin: 0;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .relative.overflow-hidden {
+    width: 350px;
+    min-width: 350px;
+    height: 430px;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .absolute.-right-5 {
+    right: calc(50% - 300px);
+
+    display: flex !important;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+  header {
+    height: 64px;
+  }
+
+  header nav {
+    height: 64px;
+  }
+
+  #home {
+    padding-top: 95px;
+    padding-bottom: 65px;
+  }
+
+  #home h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  #home h2 {
+    font-size: 25px;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .relative.overflow-hidden {
+    width: min(88vw, 350px);
+    min-width: 0;
+
+    height: min(110vw, 430px);
+
+    max-height: 430px;
+  }
+
+  /*
+    On small screens statistics
+    move below the image.
+  */
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .absolute.-right-5 {
+    position: static;
+
+    width: min(88vw, 350px);
+
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    padding: 0;
+
+    border-left: 0;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .absolute.-right-5
+    > div {
+    margin: 0;
+
+    text-align: center;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .absolute.-right-5
+    p:first-child {
+    font-size: 27px;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .absolute.-right-5
+    p:last-child {
+    max-width: none;
+
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  #projects article > div:first-child {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+  #home h1 {
+    font-size: 41px;
+  }
+
+  #home h2 {
+    font-size: 22px;
+  }
+
+  #home > .relative.mx-auto.grid > div:last-child
+    > .relative.overflow-hidden {
+    width: 90vw;
+    height: 110vw;
+  }
+
+  header nav > a:last-child {
+    display: none;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
